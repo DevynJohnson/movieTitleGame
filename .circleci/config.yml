@@ -21,4 +21,4 @@ workflows:
       - start-server
       - cypress/run:
           name: run-component-tests
-          command: npx cypress run --component
+          start-command: npx cypress run --component
