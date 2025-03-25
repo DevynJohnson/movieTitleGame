@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  cypress: cypress-io/cypress@3.4.3
 
 jobs:
   hello-world-job:
@@ -11,3 +13,9 @@ workflows:
   hello-world-workflow:
     jobs:
       - hello-world-job
+  use-my-orb:
+    jobs:
+      - cypress/run:
+          cypress-command: npm run test --browser chrome
+          install-browsers: true
+          start-command: npm run start:dev
